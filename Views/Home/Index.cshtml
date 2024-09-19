@@ -1,8 +1,14 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Calendar of daily image links";
+    string[] moNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    ViewData["CurrentMonth"] = moNames[DateTime.Now.Month - 1];
+    ViewData["CurrentYear"] = DateTime.Now.Year;
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>@ViewData["CurrentMonth"] ViewData["CurrentYear"]</p>
+    <div class="cal-grid"></div>
 </div>
